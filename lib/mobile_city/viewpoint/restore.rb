@@ -5,7 +5,6 @@ module MobileCity
     # `user_profiles` have been restricted using Privacy/Ethics.
     #
     # The following restorations are done:
-    #   * `poi_parents` on visible `pois` for both child and parent
     #   * `poi_owners`  on visible `pois` and `user_profiles`
     #   * `poi_images`  on visible `pois`
     #
@@ -18,13 +17,6 @@ module MobileCity
     module Restore
       include Alf::Viewpoint
       expects Native
-
-      # Only (id, parent) for visible pois and visible parents
-      def poi_parents
-        intersect(
-          matching(super, poi_ids),
-          matching(super, poi_ids(:parent)))
-      end
 
       # Only (poi, owner) pairs for visible POIs and visible owners
       def poi_owners

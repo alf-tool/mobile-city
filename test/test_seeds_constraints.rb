@@ -41,25 +41,6 @@ describe 'The constraints on seeds' do
     end
   end
 
-  context 'poi_parents' do
-
-    it 'has unique id' do
-      is_key!(:poi_parents, [:id])
-    end
-
-    it 'has only valid POIs' do
-      query{
-        not_matching(poi_parents, project(pois, [:id]))
-      }.should be_empty
-    end
-
-    it 'has only valid parents' do
-      query{
-        not_matching(poi_parents, rename(project(pois, [:id]), id: :parent))
-      }.should be_empty
-    end
-  end
-
   context 'poi_descriptions' do
 
     it 'has unique id' do

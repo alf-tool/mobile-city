@@ -11,14 +11,9 @@ Sequel.migration do
       String  :id
       String  :name
       Boolean :sensible
+      String  :parent
       primary_key [:id]
-    end
-    create_table(:poi_parents) do
-      String :id
-      String :parent
-      foreign_key [:id], :pois, :null=>false, :key=>[:id], :deferrable=>true
       foreign_key [:parent], :pois, :null=>false, :key=>[:id], :deferrable=>true
-      primary_key [:id]
     end
     create_table(:poi_owners) do
       String :id
