@@ -3,6 +3,6 @@
   { "id": "manneken",  "name": "Manneken Pis",   "sensible": false, "parent": "brussels" },
   { "id": "delirium",  "name": "Delirium Cafe",  "sensible": true,  "parent": "brussels" },
   { "id": "kites",     "name": "Kites shop",     "sensible": false, "parent": "brussels" },
-  { "id": "paris",     "name": "Paris",          "sensible": false, "parent": "brussels" },
+  { "id": "paris",     "name": "Paris",          "sensible": false, "parent": "paris"    },
   { "id": "chocolate", "name": "Chocolate shop", "sensible": false, "parent": "brussels" }
 ]
