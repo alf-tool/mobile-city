@@ -1,4 +1,4 @@
 [
-  { "id": "kites",     "owner": "blambeau" },
-  { "id": "chocolate", "owner": "mdelsol" }
+  { "poi": "kites",     "user": "blambeau" },
+  { "poi": "chocolate", "user": "mdelsol" }
 ]

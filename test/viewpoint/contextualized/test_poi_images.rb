@@ -10,7 +10,7 @@ module MobileCity::Viewpoint
     }
 
     it 'should inline descriptions in user language' do
-      subject.restrict(id: "brussels-1").tuple_extract[:description].should eq("On voit ici la ville de Bruxelles, ...")
+      subject.restrict(img: "brussels-1").tuple_extract[:img_description].should eq("On voit ici la ville de Bruxelles, ...")
     end
 
   end

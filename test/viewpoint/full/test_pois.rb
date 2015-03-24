@@ -11,22 +11,22 @@ module MobileCity
       let(:viewpoint){ Viewpoint[user_id: 'blambeau'] }
 
       it 'should include owned POIS' do
-        kites = subject.restrict(id: "kites").tuple_extract
-        kites.description.should eq("Magasin de cerf-volants")
+        kites = subject.restrict(poi: "kites").tuple_extract
+        kites.poi_description.should eq("Magasin de cerf-volants")
       end
 
       it 'should include public POIs' do
-        brussels = subject.restrict(id: "brussels").tuple_extract
-        brussels.description.should eq("Bruxelles")
+        brussels = subject.restrict(poi: "brussels").tuple_extract
+        brussels.poi_description.should eq("Bruxelles")
       end
 
       it 'should include sensible POIs' do
-        delirium = subject.restrict(id: "delirium").tuple_extract
-        delirium.description.should eq("Le Delirium Cafe")
+        delirium = subject.restrict(poi: "delirium").tuple_extract
+        delirium.poi_description.should eq("Le Delirium Cafe")
       end
 
       it 'should not include private POIs' do
-        subject.restrict(id: "chocolate").should be_empty
+        subject.restrict(poi: "chocolate").should be_empty
       end
     end
 
@@ -34,21 +34,21 @@ module MobileCity
       let(:viewpoint){ Viewpoint[user_id: 'mdelsol'] }
 
       it 'should include owned POIS' do
-        kites = subject.restrict(id: "chocolate").tuple_extract
-        kites.description.should eq("Chocolate shop")
+        kites = subject.restrict(poi: "chocolate").tuple_extract
+        kites.poi_description.should eq("Chocolate shop")
       end
 
       it 'should include public POIs' do
-        brussels = subject.restrict(id: "brussels").tuple_extract
-        brussels.description.should eq("Brussels (the city)")
+        brussels = subject.restrict(poi: "brussels").tuple_extract
+        brussels.poi_description.should eq("Brussels (the city)")
       end
 
       it 'should not include sensible POIs' do
-        subject.restrict(id: "delirium").should be_empty
+        subject.restrict(poi: "delirium").should be_empty
       end
 
       it 'should not include private POIs' do
-        subject.restrict(id: "kites").should be_empty
+        subject.restrict(poi: "kites").should be_empty
       end
     end
 

@@ -18,11 +18,11 @@ module MobileCity
       include Alf::Viewpoint
       expects Native
 
-      # Only (poi, owner) pairs for visible POIs and visible owners
+      # Only (poi, user) pairs for visible POIs and visible owners
       def poi_owners
         intersect(
           matching(super, poi_ids),
-          matching(super, project(rename(user_profiles, id: :owner), [:owner])))
+          matching(super, user_profiles))
       end
 
       # Only POI descriptions for visible POIs
@@ -30,23 +30,21 @@ module MobileCity
       #   matching(super, poi_ids)
       # end
 
-      # Only imges of visible POIs
+      # Only images of visible POIs
       def poi_images
-        matching(super, poi_ids(:poi))
+        matching(super, poi_ids)
       end
 
       # Only image descriptions of visible images
       # def poi_image_descriptions
-      #   matching(super, project(poi_images, [:id]))
+      #   matching(super, project(poi_images, [:img]))
       # end
 
     protected
 
       # Utility projection on ids of visible POIs
-      def poi_ids(as = nil)
-        proj = project(pois, [:id])
-        proj = rename(proj, id: as) if as
-        proj
+      def poi_ids
+        project(pois, [:poi])
       end
 
     end # module Restore

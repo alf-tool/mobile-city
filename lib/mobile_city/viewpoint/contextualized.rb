@@ -18,7 +18,7 @@ module MobileCity
       expects Native, UserInfo
 
       def pois
-        join(super, project(poi_descriptions, [:id, :description]))
+        join(super, project(poi_descriptions, [:poi, :poi_description]))
       end
 
       def poi_descriptions
@@ -26,7 +26,7 @@ module MobileCity
       end
 
       def poi_images
-        join(super, project(poi_image_descriptions, [:id, :description]))
+        join(super, project(poi_image_descriptions, [:img, :img_description]))
       end
 
       def poi_image_descriptions

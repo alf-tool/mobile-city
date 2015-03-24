@@ -11,7 +11,7 @@ module MobileCity
 
     it 'should only show the profile of the current user' do
       subject.size.should eq(1)
-      subject.tuple_extract[:id].should eq('blambeau')
+      subject.tuple_extract[:user].should eq('blambeau')
     end
 
   end

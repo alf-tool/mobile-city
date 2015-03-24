@@ -10,7 +10,7 @@ module MobileCity::Viewpoint
     }
 
     it 'should inline descriptions in user language' do
-      subject.restrict(id: "brussels").tuple_extract[:description].should eq("Bruxelles")
+      subject.restrict(poi: "brussels").tuple_extract[:poi_description].should eq("Bruxelles")
     end
 
   end

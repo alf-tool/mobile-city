@@ -19,7 +19,7 @@ module MobileCity
 
       # Returns a restriction of `user_profiles` on the current user.
       def current_user
-        restrict(native.user_profiles, id: user_id)
+        restrict(native.user_profiles, user: user_id)
       end
 
     end # module UserInfo

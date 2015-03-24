@@ -24,7 +24,7 @@ module MobileCity
       # Restrict POIs to those owned by the current user or the public ones
       # (i.e. not owned by anyone)
       def pois
-        owned_pois  = matching(super, restrict(native.poi_owners, owner: user_id))
+        owned_pois  = matching(super, restrict(native.poi_owners, user: user_id))
         public_pois = not_matching(super, native.poi_owners)
         union(owned_pois, public_pois)
       end
