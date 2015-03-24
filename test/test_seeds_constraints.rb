@@ -1,7 +1,7 @@
 require 'test_helper'
 describe 'The constraints on seeds' do
 
-  let(:db){ MobileCity.seeds_database }
+  let(:db){ MobileCity::SEEDS_DB }
 
   def query(*args, &bl)
     db.connect do |conn|

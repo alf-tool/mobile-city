@@ -2,9 +2,9 @@ alfrc do |c|
   c.load_paths |= [ "lib" ]
   c.requires   |= [ "mobile_city" ]
   c.database = ->{
-    MobileCity.seeds_database
+    MobileCity::SQLITE_DB
   }
   c.viewpoint = ->{
-    MobileCity::Viewpoint::Native[]
+    MobileCity::Viewpoint[user_id: 'blambeau']
   }
 end

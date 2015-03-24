@@ -2,13 +2,9 @@ require 'mobile_city'
 
 module ViewpointHelpers
 
-  def database(options = {})
-    options = options.merge(viewpoint: viewpoint)
-    MobileCity.seeds_database(options)
-  end
-
   def connection(options = {})
-    database(options).connection
+    options = options.merge(viewpoint: viewpoint)
+    MobileCity::SEEDS_DB.connection(options)
   end
 
   def query(&bl)
