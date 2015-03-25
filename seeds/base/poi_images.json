@@ -1,8 +1,11 @@
 [
-  { "img": "brussels-1",  "poi": "brussels",  "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/TE-Collage_Brussels.png" },
-  { "img": "manneken-1",  "poi": "manneken",  "url": "http://upload.wikimedia.org/wikipedia/commons/6/64/Bruxelles_Manneken_Pis.jpg" },
-  { "img": "paris-1",     "poi": "paris",     "url": "http://deluxedrivers.com/wp-content/uploads/2013/03/paris-city-lights.jpg" },
-  { "img": "delirium-1",  "poi": "delirium",  "url": "http://upload.wikimedia.org/wikipedia/commons/3/3b/CafeDeliriumEx.JPG" },
-  { "img": "kites-1",     "poi": "kites",     "url": "http://www.billykite.com/images/shop3.jpg" },
-  { "img": "chocolate-1", "poi": "chocolate", "url": "http://i.telegraph.co.uk/multimedia/archive/02339/Belgian-chocolate-_2339760b.jpg" }
+  { "img": "brussels-1",  "poi": "brussels",  "url": "brussels-1.jpg" },
+  { "img": "brussels-2",  "poi": "brussels",  "url": "brussels-2.jpg" },
+  { "img": "brussels-3",  "poi": "brussels",  "url": "brussels-3.jpg" },
+  { "img": "manneken-1",  "poi": "manneken",  "url": "manneken-1.jpg" },
+  { "img": "manneken-2",  "poi": "manneken",  "url": "manneken-2.jpg" },
+  { "img": "paris-1",     "poi": "paris",     "url": "paris-city-lights.jpg" },
+  { "img": "delirium-1",  "poi": "delirium",  "url": "delirium-1.jpg" },
+  { "img": "chocolate-1", "poi": "chocolate", "url": "Belgian-chocolate-_2339760b.jpg" },
+  { "img": "moulin-rouge-1", "poi": "moulin-rouge", "url": "moulin-rouge.jpg"}
 ]

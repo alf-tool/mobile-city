@@ -17,7 +17,10 @@ task :"create-sqlite" do
   MobileCity::SQLITE_DB.connect do |conn|
     conn.migrate!
     MobileCity::SEEDS_DB.connect do |seeds|
-      MobileCity::Viewpoint::Native.members.each do |member|
+      MobileCity::Viewpoint::Base.new(seeds).members.reverse.each do |member|
+        conn.relvar(member).delete
+      end
+      MobileCity::Viewpoint::Base.new(seeds).members.each do |member|
         conn.relvar(member).affect(seeds.query(member))
       end
     end

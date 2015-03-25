@@ -1,0 +1,15 @@
+<div class="col-md-12">
+  <header>
+    <a class="pull-right" href="/"><i class="fa fa-sign-out"></i></a>
+  </header>
+</div>
+<div class="col-md-12">
+  <ul class="poilist">
+    *{pois}{
+      <li ?{sensible}{class="sensible"}>
+        <a href="/pois/${poi}?+{context}">${name}</a>
+        <p>${poi_description}</p>
+      </li>
+    }
+  </ul>
+</div>

@@ -3,7 +3,6 @@ Sequel.migration do
     create_table(:user_profiles) do
       String :user
       String :name
-      String :lang
       String :age_group
       primary_key [:user]
     end

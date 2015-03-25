@@ -1,13 +1,13 @@
 module MobileCity
   class Viewpoint
-    class Privacy < Viewpoint
+    class Geolized < Viewpoint
 
       def user_profiles
-        restrict(up.user_profiles, user: context[:user])
+        up.user_profiles
       end
 
       def pois
-        union(public_pois, owned_pois)
+        restrict(up.pois, eq(:poi, context[:place]) | eq(:parent, context[:place]))
       end
 
       def poi_descriptions
@@ -23,19 +23,9 @@ module MobileCity
       end
 
       def poi_owners
-        matching(up.poi_owners, user_profiles)
+        matching(up.poi_owners, pois)
       end
 
-    private
-
-      def public_pois
-        not_matching(up.pois, up.poi_owners)
-      end
-
-      def owned_pois
-        matching(up.pois, matching(up.poi_owners, user_profiles))
-      end
-
-    end # class Privacy
+    end # class Geolized
   end # class Viewpoint
 end # module MobileCity

@@ -1,0 +1,83 @@
+html {
+  margin-top: 10px;
+}
+header {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: black;
+}
+header:after{
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+ul.poilist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.poilist li {
+  margin: 10px 0;
+  cursor: pointer;
+  border-bottom-left-radius: 10px;
+}
+ul.poilist li:first-of-type {
+  margin: 0;
+}
+ul.poilist li a {
+  padding: 10px;
+  font-size: 16px;
+  display: block;
+  color: white;
+}
+ul.poilist li a:hover {
+  color: white;
+  text-decoration: underline;
+}
+ul.poilist li p {
+  padding: 10px;
+}
+
+ul.poilist li {
+  border: 1px solid #337ab7;
+}
+ul.poilist li a {
+  background: #337ab7;
+}
+ul.poilist li.sensible {
+  border: 1px solid #ff6666;
+}
+ul.poilist li.sensible a {
+  background: #ff6666;
+}
+
+.poibox {
+  border: 1px solid #337ab7;
+  margin: 10px 0px;
+  min-height: 300px;
+}
+.poibox.sensible {
+  border: 1px solid #ff6666;
+}
+.poibox h1 {
+  background: #337ab7;
+  margin: 0px;
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+}
+.poibox.sensible h1 {
+  background: #ff6666;
+}
+.poibox .inner,
+.poibox .seealso {
+  padding: 10px;
+}
+.poibox img {
+  display: block;
+  max-width: 400px;
+  width: 90%;
+  margin: 20px auto;
+  border: 1px solid #AAA;
+}

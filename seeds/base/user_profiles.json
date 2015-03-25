@@ -1,4 +1,4 @@
 [
-  { "user": "blambeau", "name": "Bernard Lambeau", "lang": "fr", "age_group": "adult" },
-  { "user": "mdelsol",  "name": "Maria Delsol",    "lang": "en", "age_group": "child" }
+  { "user": "blambeau", "name": "Bernard Lambeau", "age_group": "adult" },
+  { "user": "mdelsol",  "name": "Maria Delsol",    "age_group": "child" }
 ]

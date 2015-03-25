@@ -1,26 +1,49 @@
 module MobileCity
-  module Viewpoint
-    #
-    # This viewpoint implements the following visibility requirements:
-    #
-    # * Sensible POIs shall not be visible if the user is a child.
-    #
-    # This requirement is achieved by restricting `pois` accordingly. The
-    # viewpoint therefore expects to be composed with Native (i.e. pois)
-    # and UserInfo (i.e. `current_user`).
-    #
-    module Ethics
-      include Alf::Viewpoint
-      expects Native, UserInfo
+  class Viewpoint
+    class Ethics < Viewpoint
 
-      # Restrict sensible POIs if the current user is a child
-      def pois
-        adult = restrict(current_user, age_group: "adult")
-        union(                                    # both ...
-          restrict(super(), sensible: false),     #   1) non sensible POIs
-          matching(super(), project(adult, [])))  #   2) and all of them if adult
+      def user_profiles
+        up.user_profiles
       end
 
-    end # module Ethics
-  end # module Viewpoint
+      def pois
+        ite(adult?, up.pois, restrict(up.pois, sensible: false))
+      end
+
+      def poi_descriptions
+        on_age_group(matching(up.poi_descriptions, pois))
+      end
+
+      def poi_images
+        matching(up.poi_images, pois)
+      end
+
+      def poi_image_descriptions
+        on_age_group(matching(up.poi_image_descriptions, poi_images))
+      end
+
+      def poi_owners
+        matching(up.poi_owners, pois)
+      end
+
+    private
+
+      def adult?
+        restrict(age_group, age_group: "adult")
+      end
+
+      def age_group
+        project(restrict(up.user_profiles, user: context[:user]), [:age_group])
+      end
+
+      def ite(test, r, s)
+        union(matching(r, project(test, [])), s)
+      end
+
+      def on_age_group(r)
+        allbut(matching(r, age_group), [:age_group])
+      end
+
+    end # class Ethics
+  end # class Viewpoint
 end # module MobileCity

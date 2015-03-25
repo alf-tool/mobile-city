@@ -1,0 +1,25 @@
+<div class="col-md-12">
+  <form action="/pois" method="GET">
+    <div class="form-group">
+      <label for="usernameInput">Username</label>
+      <input type="text" class="form-control" id="usernameInput" name="user">
+    </div>
+    <div class="form-group">
+      <label for="placeSelect">Place</label>
+      <select class="form-control" id="placesSelect" name="place">
+        *{places}{
+          <option value="${poi}">${poi}</option>
+        }
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="langSelect">Language</label>
+      <select class="form-control" id="langSelect" name="lang">
+        *{languages}{
+          <option value="${lang}">${lang}</option>
+        }
+      </select>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>

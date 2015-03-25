@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/alf-tool/alf-core.git
-  revision: 95fdbf904a0f7cda543c138ad9f8cae6112aff0e
-  specs:
-    alf-core (0.17.0)
-      domain (~> 1.0)
-      myrrha (~> 3.0)
-      path (~> 1.3)
-      sexpr (~> 0.6.0)
-
-GIT
   remote: git://github.com/alf-tool/alf-rack.git
   revision: f2017e66983c19ad182693b21825003a7fc40cd9
   specs:
@@ -44,12 +34,43 @@ GIT
       alf-core (= 0.17.0)
       sexpr (~> 0.6.0)
 
+PATH
+  remote: /Users/blambeau/Devel/alf/alf-core
+  specs:
+    alf-core (0.17.0)
+      domain (~> 1.0)
+      myrrha (~> 3.0)
+      path (~> 1.3)
+      sexpr (~> 0.6.0)
+
+PATH
+  remote: /Users/blambeau/Devel/wlang
+  specs:
+    wlang (2.2.4)
+      backports (~> 2.6)
+      citrus (~> 2.4.1)
+      path (~> 1.3)
+      quickl (~> 0.4.3)
+      temple (~> 0.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
+    backports (2.8.2)
+    citrus (2.4.1)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     diff-lcs (1.2.5)
     domain (1.0.0)
+    equalizer (0.0.11)
     highline (1.7.1)
+    ice_nine (0.11.1)
     myrrha (3.1.0)
       domain (~> 1.0)
     path (1.3.3)
@@ -60,6 +81,8 @@ GEM
     rack-protection (1.5.3)
       rack
     rack-robustness (1.1.0)
+    rack-test (0.6.3)
+      rack (>= 1.0)
     rake (10.4.2)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
@@ -82,7 +105,14 @@ GEM
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     sqlite3 (1.3.10)
+    temple (0.7.5)
+    thread_safe (0.3.5)
     tilt (2.0.1)
+    virtus (1.0.5)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
+      equalizer (~> 0.0, >= 0.0.9)
 
 PLATFORMS
   ruby
@@ -95,7 +125,10 @@ DEPENDENCIES
   alf-sql!
   rack (~> 1.5)
   rack-robustness (~> 1.1)
+  rack-test (~> 0.6)
   rake (~> 10.4)
   rspec (~> 3.0)
   sinatra (~> 1.4)
   sqlite3 (~> 1.3)
+  virtus (~> 1.0)
+  wlang!

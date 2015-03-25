@@ -1,0 +1,121 @@
+<style>
+  html {
+    margin-top: 10px;
+  }
+  h2 {
+    margin: 40px 0 20px 0;
+  }
+  h2:first-of-type {
+    margin-top: 0;
+  }
+  #deselectAllLink, #selectAllLink {
+    padding: 0px 3px;
+    cursor: pointer;
+  }
+  .left-panel {
+    border-right: 1px solid #888;
+  }
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-2 left-panel">
+      <form id="vpform" action="/" method="GET">
+        <div class="form-group">
+          <label>Relations</label>
+          <a class="pull-right" id="deselectAllLink">None</a>
+          <a class="pull-right" id="selectAllLink">All</a>
+          *{db.members}{
+            <div class="checkbox">          
+              <label>
+                <input class="rel" type="checkbox" name="rels[]" value="${self}" ?{state.rels.${self}}{checked}>
+                ${self}
+              </label>
+            </div>
+          }
+        </div>
+        <div class="form-group">
+          <label for="langSelect">Language</label>
+          <select class="form-control" id="langSelect" name="lang">
+            <option value="" ?{state.lang.not_defined?}{selected}></option>
+            *{languages}{
+              <option value="${lang}" ?{state.lang.${lang}}{selected}>${lang}</option>  
+            }
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="placeSelect">Place</label>
+          <select class="form-control" id="placeSelect" name="place">
+            <option value="" ?{state.place.not_defined?}{selected}></option>
+            *{places}{
+              <option value="${poi}" ?{state.place.${poi}}{selected}>${poi}</option>
+            }
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="privacySelect">Privacy</label>
+          <select class="form-control" id="privacySelect" name="privacy">
+            <option value="" ?{state.privacy.not_defined?}{selected}></option>
+            *{users}{
+              <option value="${user}" ?{state.privacy.${user}}{selected}>${user}</option>
+            }
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ethicsSelect">Ethics</label>
+          <select class="form-control" id="ethicsSelect" name="ethics">
+            <option value="" ?{state.ethics.not_defined?}{selected}></option>
+            *{users}{
+              <option value="${user}" ?{state.ethics.${user}}{selected}>${user}</option>
+            }
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="checkbox">          
+            <label>
+              <input type="checkbox" name="flatten" ?{state.flatten.on}{checked}>
+              Flatten schema?
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="checkbox">          
+            <label>
+              <input type="checkbox" name="structure" ?{state.structure.on}{checked}>
+              Structure schema?
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-10">
+      *{db.members}{
+        ?{state.rels.${self}}{
+          <div class="rel" id="${self}">
+            <h2 class="pull-left">${self}</h2>
+            <a class="pull-right" href="/${self}.json" target="blank">json</a>
+            +{db.${self}}
+          </div>
+        }
+      }
+    </div>
+  </div>
+</div>
+
+<script>
+  function selectAll() {
+    $("#vpform input.rel").prop("checked", true);
+    $("#vpform").submit();
+  }
+  function deselectAll() {
+    $("#vpform input.rel").prop("checked", false);
+    $("#vpform").submit();
+  }
+  $(function() {
+    $('#vpform input, #vpform select').change(function() {
+      this.form.submit();
+    });
+    $("#selectAllLink").click(selectAll);
+    $("#deselectAllLink").click(deselectAll);
+  });        
+</script>

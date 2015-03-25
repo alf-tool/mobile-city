@@ -1,14 +1,23 @@
 require 'alf-core'
 require 'alf-sequel'
+require 'alf-rack'
 require 'path'
+require 'rack/accept'
+require 'sinatra/base'
+require 'wlang'
+require 'json'
+
+require_relative 'ext/alf'
+require_relative 'ext/rack'
 
 require_relative 'mobile_city/viewpoint'
-require_relative 'mobile_city/relvarer'
+require_relative 'mobile_city/web_app'
+require_relative 'mobile_city/app'
+require_relative 'mobile_city/explorer'
 
 module MobileCity
 
   DEFAULT_OPTIONS = {
-    viewpoint: Viewpoint::Native,
     migrations_folder: Path.dir/"../migrations"
   }
 
@@ -21,10 +30,5 @@ module MobileCity
 
   # Alf database on the SQLite file
   SQLITE_DB = database(Path.dir/"../mobile-city.db")
-
-  def self.connect(options = {})
-    options = DEFAULT_OPTIONS.merge(options)
-    Relvarer.new(SQLITE_DB.connection(options), options[:viewpoint])
-  end
 
 end

@@ -1,8 +1,8 @@
 [
-  { "poi": "brussels",  "name": "Brussels",       "sensible": false, "parent": "brussels" },
-  { "poi": "manneken",  "name": "Manneken Pis",   "sensible": false, "parent": "brussels" },
-  { "poi": "delirium",  "name": "Delirium Cafe",  "sensible": true,  "parent": "brussels" },
-  { "poi": "kites",     "name": "Kites shop",     "sensible": false, "parent": "brussels" },
-  { "poi": "paris",     "name": "Paris",          "sensible": false, "parent": "paris"    },
-  { "poi": "chocolate", "name": "Chocolate shop", "sensible": false, "parent": "brussels" }
+  { "poi": "brussels",     "name": "Brussels",       "sensible": false, "parent": "brussels" },
+  { "poi": "manneken",     "name": "Manneken Pis",   "sensible": false, "parent": "brussels" },
+  { "poi": "delirium",     "name": "Delirium Cafe",  "sensible": true,  "parent": "brussels" },
+  { "poi": "chocolate",    "name": "Chocolate shop", "sensible": false, "parent": "brussels" },
+  { "poi": "paris",        "name": "Paris",          "sensible": false, "parent": "paris"    },
+  { "poi": "moulin-rouge", "name": "Moulin Rouge",   "sensible": true,  "parent": "paris"    }
 ]
