@@ -1,6 +1,6 @@
 <style>
   html {
-    margin-top: 10px;
+    margin-top: 20px;
   }
   h2 {
     margin: 40px 0 20px 0;
@@ -20,7 +20,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2 left-panel">
-      <form id="vpform" action="/" method="GET">
+      <form id="vpform" action="/explorer" method="GET">
         <div class="form-group">
           <label>Relations</label>
           <a class="pull-right" id="deselectAllLink">None</a>
