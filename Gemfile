@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 group :runtime do
-  #gem "alf-core",   github: "alf-tool/alf-core"
-  gem "alf-core",   path: "/Users/blambeau/Devel/alf/alf-core"
+  gem "alf-core",   github: "alf-tool/alf-core"
   gem "alf-sql",    github: "alf-tool/alf-sql"
   gem "alf-sequel", github: "alf-tool/alf-sequel"
   gem "alf-rack",   github: "alf-tool/alf-rack"
@@ -11,8 +10,7 @@ group :runtime do
   gem "rack-robustness", "~> 1.1"
   gem "sinatra", "~> 1.4"
   gem "sqlite3", "~> 1.3"
-  #gem "wlang", "~> 2.3"
-  gem "wlang", path: "/Users/blambeau/Devel/wlang"
+  gem "wlang", "~> 2.3"
   gem "virtus", "~> 1.0"
 end
 
