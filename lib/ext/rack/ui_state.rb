@@ -52,10 +52,14 @@ module Rack
       alias :has_key? :respond_to?
 
       def method_missing(name, *args, &bl)
-        return super if bl || !args.empty?
-        value = params[name.to_s]
-        defin = !value.nil? && !value.empty?
-        QueryVar.new(name, defin, value)
+        if name.to_s =~ /=$/ && args.length == 1 && bl.nil?
+          params[name.to_s[0...-1]] = args.first
+        else
+          return super if bl || !args.empty?
+          value = params[name.to_s]
+          defin = !value.nil? && !value.empty?
+          QueryVar.new(name, defin, value)
+        end
       end
       alias :[] :method_missing
 
