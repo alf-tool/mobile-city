@@ -7,7 +7,9 @@ module MobileCity
       end
 
       def pois
-        restrict(up.pois, eq(:poi, context[:place]) | eq(:parent, context[:place]))
+        extend(
+          restrict(up.pois, eq(:poi, context[:place]) | eq(:parent, context[:place])),
+          :parent => context[:place])
       end
 
       def poi_descriptions

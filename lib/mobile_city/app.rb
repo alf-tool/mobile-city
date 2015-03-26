@@ -22,17 +22,18 @@ module MobileCity
     get '/pois' do
       redirect '/' unless valid_context?
 
-      serve :pois, db.pois.to_a
+      serve :pois, db({})
+        .pois
+        .allbut([:images])
+        .to_a
     end
 
     get '/pois/:poi' do |poi|
       redirect '/' unless valid_context?
 
-      serve :poi, db.pois
-        .restrict(eq(poi: poi) | eq(parent: poi))
-        .extend(:parent => poi)
-        .image(db.poi_images, :images)
-        .hierarchize([:poi], [:parent], :nearby)
+      serve :poi, db({place: poi})
+        .pois
+        .restrict(poi: poi)
         .tuple_extract
     end
 
@@ -63,13 +64,18 @@ module MobileCity
         context: "lang=#{state.lang}&user=#{state.user}&place=#{state.place}" }
     end
 
-    def db
+    def db(context = {})
+      context[:lang] ||= state.lang.to_s
+      context[:place] ||= state.place.to_s
+      context[:user] ||= state.user.to_s
+
       db = Viewpoint::Base.new(alf_connection)
-      db = Viewpoint::Localized.new(db, lang: state.lang.to_s)
-      db = Viewpoint::Geolized.new(db, place: state.place.to_s)
-      db = Viewpoint::Privacy.new(db, user: state.user.to_s)
-      db = Viewpoint::Ethics.new(db, user: state.user.to_s)
+      db = Viewpoint::Localized.new(db, context)
+      db = Viewpoint::Geolized.new(db, context)
+      db = Viewpoint::Privacy.new(db, context)
+      db = Viewpoint::Ethics.new(db, context)
       db = Viewpoint::Flatten.new(db)
+      db = Viewpoint::Structure.new(db)
       db
     end
 
