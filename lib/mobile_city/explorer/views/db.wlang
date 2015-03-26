@@ -92,8 +92,7 @@
       *{db.members}{
         ?{state.rels.${self}}{
           <div class="rel" id="${self}">
-            <h2 class="pull-left">${self}</h2>
-            <a class="pull-right" href="/${self}.json" target="blank">json</a>
+            <h2>${self}</h2>
             +{db.${self}}
           </div>
         }
