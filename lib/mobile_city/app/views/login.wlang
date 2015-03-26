@@ -1,22 +1,25 @@
-<div class="col-md-12">
+<style>
+  form { margin-top: 50px; }
+</style>
+<div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 col-xs-8 col-xs-offset-2">
   <form action="/pois" method="GET">
     <div class="form-group">
       <label for="usernameInput">Username</label>
-      <input type="text" class="form-control" id="usernameInput" name="user">
+      <input required type="text" class="form-control" id="usernameInput" name="user" value="${state.user}">
     </div>
     <div class="form-group">
       <label for="placeSelect">Place</label>
-      <select class="form-control" id="placesSelect" name="place">
+      <select required class="form-control" id="placesSelect" name="place">
         *{places}{
-          <option value="${poi}">${poi}</option>
+          <option value="${poi}" ?{state.place.${poi}}{selected}>${poi}</option>
         }
       </select>
     </div>
     <div class="form-group">
       <label for="langSelect">Language</label>
-      <select class="form-control" id="langSelect" name="lang">
+      <select required class="form-control" id="langSelect" name="lang">
         *{languages}{
-          <option value="${lang}">${lang}</option>
+          <option value="${lang}" ?{state.lang.${lang}}{selected}>${lang}</option>
         }
       </select>
     </div>

@@ -1,6 +1,6 @@
 <div class="col-md-12">
   <header>
-    <a class="pull-right" href="/"><i class="fa fa-sign-out"></i></a>
+    <a class="pull-right" href="/?+{context}"><i class="fa fa-sign-out"></i></a>
   </header>
 </div>
 <div class="col-md-12">

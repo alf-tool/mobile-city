@@ -6,20 +6,22 @@ module MobileCity
     end
 
     get '/' do
-      wlang :login, locals: {
+      wlang :login, locals: base_locals.merge({
         users:  users.to_a,
         places: places.to_a,
         languages: languages.to_a
-      }
+      })
     end
 
     get '/pois' do
       redirect '/' unless valid_context?
+
       serve :pois, db.pois.to_a
     end
 
     get '/pois/:poi' do |poi|
       redirect '/' unless valid_context?
+
       serve :poi, db.pois
         .restrict(eq(poi: poi) | eq(parent: poi))
         .extend(:parent => poi)
