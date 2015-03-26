@@ -4,7 +4,8 @@
   { "img": "brussels-3",  "poi": "brussels",  "url": "brussels-3.jpg" },
   { "img": "manneken-1",  "poi": "manneken",  "url": "manneken-1.jpg" },
   { "img": "manneken-2",  "poi": "manneken",  "url": "manneken-2.jpg" },
-  { "img": "paris-1",     "poi": "paris",     "url": "paris-city-lights.jpg" },
+  { "img": "paris-1",     "poi": "paris",     "url": "paris-1.jpg" },
+  { "img": "eiffel-1",    "poi": "eiffel-tower", "url": "eiffel-1.jpg" },
   { "img": "delirium-1",  "poi": "delirium",  "url": "delirium-1.jpg" },
   { "img": "chocolate-1", "poi": "chocolate", "url": "Belgian-chocolate-_2339760b.jpg" },
   { "img": "moulin-rouge-1", "poi": "moulin-rouge", "url": "moulin-rouge.jpg"}

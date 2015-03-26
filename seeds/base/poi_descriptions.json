@@ -9,10 +9,14 @@
   { "poi": "manneken",  "lang": "en", "age_group": "child", "poi_description": "Manneken Pis, a little boy who pipi" },
   { "poi": "delirium",  "lang": "fr", "age_group": "adult", "poi_description": "Le Delirium Cafe est un bar de Bruxelles connu pour sa long liste de bières belges. En janvier 2004, il servait plus de 2004 variétés de bières et a été, de par ce fait, mis au Gusiness Book des records." },
   { "poi": "delirium",  "lang": "en", "age_group": "adult", "poi_description": "Délirium Café is a bar in Brussels known for its long beer list, standing at 2,004 different brands in January 2004 as recorded in the The Guinness Book of Records." },
-  { "poi": "paris",     "lang": "fr", "age_group": "adult", "poi_description": "Paris" },
-  { "poi": "paris",     "lang": "en", "age_group": "adult", "poi_description": "Paris" },
-  { "poi": "paris",     "lang": "fr", "age_group": "child", "poi_description": "La ville de Paris" },
-  { "poi": "paris",     "lang": "en", "age_group": "child", "poi_description": "Paris (the city)" },
+  { "poi": "paris",     "lang": "fr", "age_group": "adult", "poi_description": "Paris est la capitale de la France. Elle se situe au cœur d'une vaste plaine fertile au climat tempéré, le Bassin parisien, sur une boucle de la Seine, entre les confluents de celle-ci avec la Marne et l’Oise. Ses habitants s’appellent les Parisiens." },
+  { "poi": "paris",     "lang": "en", "age_group": "adult", "poi_description": "Paris is the capital and most populous city of France. Situated on the Seine River, in the north of the country, it is in the centre of the Île-de-France region, also known as the région parisienne, 'Paris region'." },
+  { "poi": "paris",     "lang": "fr", "age_group": "child", "poi_description": "Paris est la capitale de la France, sa plus grande ville en nombre d'habitants." },
+  { "poi": "paris",     "lang": "en", "age_group": "child", "poi_description": "Paris is the capital and most populous city of France" },
+  { "poi": "eiffel-tower", "lang": "fr", "age_group": "adult", "poi_description": "La tour Eiffel est une tour de fer puddlé de 324 mètres de hauteur située à Paris, à l’extrémité nord-ouest du parc du Champ-de-Mars en bordure de la Seine dans le 7e arrondissement." },
+  { "poi": "eiffel-tower", "lang": "en", "age_group": "adult", "poi_description": "The Eiffel tower is an iron lattice tower located on the Champ de Mars in Paris. It was named after the engineer Gustave Eiffel, whose company designed and built the tower." },
+  { "poi": "eiffel-tower", "lang": "fr", "age_group": "child", "poi_description": "La tour eiffel est un des plus important monuments de Paris." },
+  { "poi": "eiffel-tower", "lang": "en", "age_group": "child", "poi_description": "The Eiffel tower is one of the most important monument in Paris." },
   { "poi": "moulin-rouge", "lang": "en", "age_group": "adult", "poi_description": "The Moulin Rouge" },
   { "poi": "chocolate", "lang": "fr", "age_group": "child", "poi_description": "Mon magasin de chocolat préféré" }
 ]

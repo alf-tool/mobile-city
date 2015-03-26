@@ -4,5 +4,6 @@
   { "poi": "delirium",     "name": "Delirium Cafe",  "sensible": true,  "parent": "brussels" },
   { "poi": "chocolate",    "name": "Chocolate shop", "sensible": false, "parent": "brussels" },
   { "poi": "paris",        "name": "Paris",          "sensible": false, "parent": "paris"    },
+  { "poi": "eiffel-tower", "name": "Eiffel Tower",   "sensible": false, "parent": "paris"    },
   { "poi": "moulin-rouge", "name": "Moulin Rouge",   "sensible": true,  "parent": "paris"    }
 ]
