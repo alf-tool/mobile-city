@@ -9,7 +9,7 @@ module MobileCity
       def pois
         hierarchize(
           image(up.pois, up.poi_images, :images),
-          [:poi], [:parent], :children)
+          [:poi], [:parent], :nearby)
       end
 
     end # class Structure

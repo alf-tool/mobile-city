@@ -26,7 +26,7 @@ module MobileCity
         .restrict(eq(poi: poi) | eq(parent: poi))
         .extend(:parent => poi)
         .image(db.poi_images, :images)
-        .hierarchize([:poi], [:parent], :children)
+        .hierarchize([:poi], [:parent], :nearby)
         .tuple_extract
     end
 

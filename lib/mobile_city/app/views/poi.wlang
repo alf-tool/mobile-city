@@ -15,7 +15,7 @@
     </div>
     <div class="seealso">
       <ul class="poilist">
-        *{poi.children}{
+        *{poi.nearby}{
           <li ?{sensible}{class="sensible"}>
             <a href="/pois/${poi}?+{context}">${name}</a>
             <p>${poi_description}</p>
