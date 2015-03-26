@@ -5,6 +5,12 @@ module MobileCity
       set :root, Path.dir/'app'
     end
 
+    use Rack::Robustness do |g|
+      g.on(Alf::NoSuchTupleError){|ex| 404 }
+      g.content_type 'text/plain'
+      g.body{|ex| "404 Not Found" }
+    end
+
     get '/' do
       wlang :login, locals: base_locals.merge({
         users:  users.to_a,
