@@ -19,7 +19,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-2 left-panel">
+    <div class="col-md-2 col-sm-3 left-panel">
       <form id="vpform" action="/explorer" method="GET">
         <div class="form-group">
           <label>Relations</label>
@@ -87,8 +87,9 @@
           </div>
         </div>
       </form>
+      <a href="/explorer">reset all</a>
     </div>
-    <div class="col-md-10">
+    <div class="col-md-10 col-sm-9">
       *{db.members}{
         ?{state.rels.${self}}{
           <div class="rel" id="${self}">
