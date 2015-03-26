@@ -9,6 +9,16 @@
       <li ?{sensible}{class="sensible"}>
         <a href="/pois/${poi}?+{context}">${name}</a>
         <p>${poi_description}</p>
+        ?{nearby.empty?}{}{
+          *{nearby}{
+            <ul class="poilist">
+              <li ?{sensible}{class="sensible"}>
+                <a href="/pois/${poi}?+{context}">${name}</a>
+                <p>${poi_description}</p>
+              </li>
+            </ul>
+          }
+        }
       </li>
     }
   </ul>

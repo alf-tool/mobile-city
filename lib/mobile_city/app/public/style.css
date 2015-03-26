@@ -38,6 +38,12 @@ ul.poilist li a:hover {
 ul.poilist li p {
   padding: 10px;
 }
+ul.poilist ul.poilist {
+  margin: 0 20px;
+}
+ul.poilist ul.poilist li {
+  margin-bottom: 10px;
+}
 
 ul.poilist li {
   border: 1px solid #337ab7;
